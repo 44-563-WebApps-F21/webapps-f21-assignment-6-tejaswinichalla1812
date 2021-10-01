@@ -8,8 +8,8 @@
     <label for="secret_phrase">Enter the secret phrase </label>
     <input type ="password" id="secret_phrase" name="secret_phrase" value="Let me in"> <br>
 
-    <label for="phrase_name"> Enter a phrase </label>
-    <input type ="text" id="phrase_name" name="phrase_name" autofocus> <br>
+    <label for="phrase"> Enter a phrase </label>
+    <input type ="text" id="phrase" name="phrase" autofocus> <br>
 
     <input type="button" onclick="processPhrase()" value="Check the phrase">
 </form>
@@ -23,7 +23,7 @@
          
     function processPhrase(){
     secret = document.getElementById("secret_phrase").value
-    phrase = document.getElementById("phrase_name").value    
+    phrase = document.getElementById("phrase").value    
     output = document.getElementById("result")
     if(secret == phrase)
     {
