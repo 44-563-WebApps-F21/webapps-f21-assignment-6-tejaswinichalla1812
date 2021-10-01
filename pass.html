@@ -24,14 +24,14 @@
     out = document.getElementById("result")
     if(secret == check)
     {
-        correct++
+       correct = correct+1
         alert("Access Allowed")
-        out.innerHtml = "correct count" + correct +"<br>" + "Wrong count "+wrong
-    } 
+        out.innerHtml = "Correct : "+correct+" Wrong : "+ wrong
+   } 
     else {
-        wrong++
+        wrong=wrong+1
         alert("Access Denied")
-        out.innerHtml = "correct count" + correct +"<br>" + "Wrong count "+wrong
+        out.innerHTML = "Correct : "+correct+" Wrong : "+ wrong
     }
       
 }
