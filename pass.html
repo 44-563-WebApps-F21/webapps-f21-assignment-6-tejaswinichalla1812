@@ -4,35 +4,41 @@
 <body>
   <title>Exploring JavaScript with dom</title>
 <h2>Pass phrase by Tejaswini Challa</h2>
-
 <form>
-    <label for="form1_age">What is your age </label>
-    <input type ="number" id="form1_age" name="form1_age" min=10 max=50 step=2 value=30> <br>
+    <label for="secret_phrase">Enter the secret phrase </label>
+    <input type ="password" id="secret_phrase" name="secret_phrase" value="Let me in"> <br>
 
-    <label for="form1_nick">What is your nickname </label>
-    <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
+    <label for="phrase_name"> Enter a phrase </label>
+    <input type ="text" id="phrase_name" name="phrase_name" autofocus> <br>
 
-    <input type="button" onclick="resolveForm()" value="Get values from form">
+    <input type="button" onclick="processPhrase()" value="Check the phrase">
 </form>
 
 
-<p id="result">This text will be replaced </p>
+<p id="result">Result will be displayed </p>
 
 <script> 
-
-function resolveForm (){
-    console.log("Getting form values")
-    age = document.getElementById("form1_age").value
-    nick = document.getElementById("form1_nick").value
-    confirmed = confirm("Are these the values? "+age+" and "+nick)
-    
-    out = document.getElementById("result")
-    if(confirmed){
-        out.innerHTML = "Values were confirmed"
-    } else {
-        out.innerHTML = "Values were not confirmed"
+    var correct = 0;
+    var wrong = 0;
+         
+    function processPhrase(){
+    secret_phrase = document.getElementById("secret_phrase").value
+    phrase_name = document.getElementById("phrase_name").value    
+    result = document.getElementById("result")
+    if(secret_phrase == phrase_name)
+    {
+        correct++
+        alert("Access Allowed")
+        result.innerHTML="correct count"+correct
+    } 
+    else {
+        wrong++
+        alert("Access Denied")
+        result.innerHtml="wrong count"+wrong
     }
-}
+}  
+
+        
 </script>
 
 </body>
