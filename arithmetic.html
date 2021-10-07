@@ -27,7 +27,7 @@
 </head>
 <body>
 <header>Tejaswini Challa computes</header>
-<h2>Getting input</h2>
+<h4>Getting input</h4>
 
 <form>
     <div class="form-group" style="width: 35%;">
@@ -79,7 +79,34 @@ function powers(){
     }
     out = document.getElementById("result")
     out.innerHTML = "Powers of " + base + " are : " + string
-    
+}
+function processRadio() {
+            base =parseInt(document.getElementById("form_base").value)
+            exponent = parseInt(document.getElementById("form_exponent").value)
+            operation = document.getElementsByName("operators")
+            sign = ""
+            for(i=0;i<operation.length;i++){
+                if(operation[i].checked){
+                    sign = operation[i].value
+                }
+            }
+            var a = 0
+            switch (sign) {
+                case "plus":
+                    a = base + exponent;
+                    break;
+                case "minus":
+                    a = base - exponent;
+                    break;
+                case "times":
+                    a = base * exponent;
+                    break;
+                case "divide":
+                    a = base / exponent;
+                    break;
+            }
+            get = document.getElementById("left")
+            get.innerHTML = "Values of "+ base + " "+ sign +" "+ exponent +": "+a
 }
 </script>
 
