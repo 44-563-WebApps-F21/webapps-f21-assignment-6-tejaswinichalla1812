@@ -30,53 +30,51 @@
 <body>
 <h2>Pass phrase by Tejaswini Challa</h2>
  <h2>Getting input</h2>
-<form>
-    <div class="form-group" style="width: 35%;">
-    <label for="secret_phrase">Enter the secret phrase</label>
-    <input type ="password" class="form-control" id="secret_phrase" name="secret_phrase" value="Let me in"> 
-    </div>
+ <form>
+    <div class="form-group" style="width: 25%;">
+    <label for="form_secret" class="form-label">Enter the Secret phrase </label>
+    <input type="password" class="form-control" id="form_secret" name="form_secret" value="Let me in">
+</div>
     <br>
-    <div class="form-group" style="width: 35%;">
-    <label for="check">Enter a phrase </label>
-    <input type ="text" class="form-control" id="check" name="check" autofocus> 
-    </div>
-    <br>
-    <input type="button" onclick="processPhrase()" value="Check the phrase" id="processBUtton" class="btn btn-primary">
+    <div class="form-group" style="width: 25%;">
+    <label for="form_phrase" class="form-label">Enter a phrase</label>
+    <input type="text" class="form-control" id="form_phrase" name="form_phrase" autofocus> <br>
+</div>
+
+    <input type="button" onclick="processPhrase()" value="Check the phrase" id="processButton" class="btn btn-primary">
 </form>
 <br>
-<p id="result">Result will be displayed </p>
+<p id="result" >This text will be replaced </p>
 <br>
+
 <div class="container">
-    <img src="images/Canaan Dog.jpg" class="img-thumbnail" alt="Canaan Dog" onclick="newImage();" id="images" style="width: 200; height: 200;">
-</div>     
-<script> 
-    var correct = 0;
-    var wrong = 0;
-    var count = 0;
-    
-    function processPhrase(){
+    <img src="images/Canaan Dog.jpg" class="img-thumbnail" alt="Ape" onclick="newImage();" id="images" style="width: 200; height: 200;">
+</div>
+
+<script>
+    correct = 0
+    wrong = 0
+    count = 0
+
+    function processPhrase() {
         console.log("Getting form values")
-    secret = document.getElementById("secret_phrase").value
-    check = document.getElementById("check").value  
-    output = document.getAnimations("result")  
-    if(secret == check)
-    {
-       correct = correct+1
-        alert("Access Allowed")
-        //out.innerHtml = "Correct : "+ correct +" Wrong : "+ wrong
-   } 
-    else {
-        wrong=wrong+1
-        alert("Access Denied")
-        if(wrong >= 2)
-        {
-          document.getElementById("processButton").onclick=function()
-          {alert("Account Locked")}
+        secret = document.getElementById("form_secret").value
+        guess = document.getElementById("form_phrase").value
+        if (secret == guess) {
+            correct = correct + 1
+            alert("Access allowed")
+        } else {
+            wrong = wrong + 1
+            alert("Access denied")
+            if(wrong >= 2){
+            document.getElementById("processButton").onclick=function(){alert("Account Locked")}
+            }	
         }
-    }
         out = document.getElementById("result")
-        out.innerHTML = "Correct : "+ correct +" Wrong : "+ wrong
+        out.innerHTML = "Correct Count: " + correct + " ,Wrong Count: " + wrong
+
     }
+
 function newImage(){
     switch(count){
         case 0:
