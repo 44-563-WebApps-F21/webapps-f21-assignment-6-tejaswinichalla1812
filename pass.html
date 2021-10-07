@@ -49,7 +49,6 @@
 <div class="container">
     <img src="images/Canaan Dog.jpg" class="img-thumbnail" alt="Canaan Dog" onclick="newImage();" id="images" style="width: 200; height: 200;">
 </div>     
-
 <script> 
     var correct = 0;
     var wrong = 0;
@@ -58,19 +57,21 @@
     function processPhrase(){
         console.log("Getting form values")
     secret = document.getElementById("secret_phrase").value
-    check = document.getElementById("check").value    
+    check = document.getElementById("check").value  
+    output = document.getAnimations("result")  
     if(secret == check)
     {
        correct = correct+1
         alert("Access Allowed")
-        out.innerHtml = "Correct : "+ correct +" Wrong : "+ wrong
+        //out.innerHtml = "Correct : "+ correct +" Wrong : "+ wrong
    } 
     else {
         wrong=wrong+1
         alert("Access Denied")
         if(wrong >= 2)
         {
-          document.getElementById("processButton").onclick=function(){alert("Account Locked")}
+          document.getElementById("processButton").onclick=function()
+          {alert("Account Locked")}
         }
     }
         out = document.getElementById("result")
