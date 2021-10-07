@@ -31,12 +31,12 @@
 <h2>Pass phrase by Tejaswini Challa</h2>
  <h2>Getting input</h2>
 <form>
-    <div class="form-group" style="width: 25%;">
+    <div class="form-group" style="width: 35%;">
     <label for="secret_phrase">Enter the secret phrase</label>
     <input type ="password" class="form-control" id="secret_phrase" name="secret_phrase" value="Let me in"> 
     </div>
     <br>
-    <div class="form-group" style="width: 25%;">
+    <div class="form-group" style="width: 35%;">
     <label for="check">Enter a phrase </label>
     <input type ="text" class="form-control" id="check" name="check" autofocus> 
     </div>
@@ -59,12 +59,11 @@
         console.log("Getting form values")
     secret = document.getElementById("secret_phrase").value
     check = document.getElementById("check").value    
-    
     if(secret == check)
     {
        correct = correct+1
         alert("Access Allowed")
-        out.innerHtml = "Correct : "+correct+" Wrong : "+ wrong
+        out.innerHtml = "Correct : "+ correct +" Wrong : "+ wrong
    } 
     else {
         wrong=wrong+1
@@ -75,10 +74,8 @@
         }
     }
         out = document.getElementById("result")
-        out.innerHTML = "Correct : "+correct+" Wrong : "+ wrong
-    
-      
-}
+        out.innerHTML = "Correct : "+ correct +" Wrong : "+ wrong
+    }
 function newImage(){
     switch(count){
         case 0:
